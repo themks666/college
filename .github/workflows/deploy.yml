@@ -1,4 +1,26 @@
-steps:
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -7,11 +29,9 @@ steps:
         with:
           node-version: 20
           cache: 'npm'
-          # Tells Node to look for package-lock.json inside frontend
           cache-dependency-path: './frontend/package-lock.json' 
 
       - name: Install Dependencies
-        # Tells GitHub to run npm ci inside the frontend directory
         defaults:
           run:
             working-directory: ./frontend
@@ -26,7 +46,6 @@ steps:
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Crucial: Points to the built dist folder inside frontend
           path: './frontend/dist' 
 
       - name: Deploy to GitHub Pages
