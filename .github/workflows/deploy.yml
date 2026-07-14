@@ -1,0 +1,34 @@
+steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          # Tells Node to look for package-lock.json inside frontend
+          cache-dependency-path: './frontend/package-lock.json' 
+
+      - name: Install Dependencies
+        # Tells GitHub to run npm ci inside the frontend directory
+        defaults:
+          run:
+            working-directory: ./frontend
+        run: npm ci
+
+      - name: Build Project
+        defaults:
+          run:
+            working-directory: ./frontend
+        run: npm run build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Crucial: Points to the built dist folder inside frontend
+          path: './frontend/dist' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
