@@ -67,7 +67,7 @@ const CourseDirectory = () => {
   const facultyOptions = ["All", ...Array.from(new Set(MOCK_COURSES.map(c => c.faculty)))];
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] w-full bg-gradient-to-br from-slate-50 via-emerald-50/40 to-teal-50/50 p-6 md:p-8 flex flex-col items-center justify-start">
+    <div className="min-h-[calc(100vh-4rem)] w-full bg-linear-to-br from-slate-50 via-emerald-50/40 to-teal-50/50 p-6 md:p-8 flex flex-col items-center justify-start">
       <div className="max-w-6xl w-full space-y-6">
         
         {/* 🗂️ Header Toolbar Row */}
@@ -139,7 +139,7 @@ const CourseDirectory = () => {
                         {/* Course Name & Code */}
                         <td className="py-4 px-5">
                           <div className="flex items-center gap-3">
-                            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 border-2 border-slate-300 text-slate-700 flex items-center justify-center group-hover:border-emerald-500 transition-all">
+                            <div className="w-9 h-9 rounded-xl bg-linear-to-br from-slate-100 to-slate-200 border-2 border-slate-300 text-slate-700 flex items-center justify-center group-hover:border-emerald-500 transition-all">
                               <BookOpen className="w-4 h-4 text-slate-500 group-hover:text-emerald-600 transition-colors" />
                             </div>
                             <div>
@@ -180,7 +180,7 @@ const CourseDirectory = () => {
                         </td>
 
                         {/* Enrolled Capacity Tracker */}
-                        <td className="py-4 px-4 max-w-[160px]">
+                        <td className="py-4 px-4 max-w-40">
                           <div className="flex justify-between items-center text-xs mb-1">
                             <span className="flex items-center gap-1 text-slate-600 font-medium">
                               <Users className="w-3.5 h-3.5 text-slate-400" />
@@ -190,7 +190,7 @@ const CourseDirectory = () => {
                           </div>
                           <div className="w-full bg-slate-200 border border-slate-300 rounded-full h-2 overflow-hidden">
                             <div 
-                              className={`h-full rounded-full transition-all duration-500 ${isFull ? "bg-rose-500" : "bg-gradient-to-r from-emerald-500 to-teal-500"}`}
+                              className={`h-full rounded-full transition-all duration-500 ${isFull ? "bg-rose-500" : "bg-linear-to-r from-emerald-500 to-teal-500"}`}
                               style={{ width: `${capacityPercentage}%` }}
                             />
                           </div>

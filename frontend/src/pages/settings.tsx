@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { 
-  Sliders, Shield, Bell, Database, 
+  Shield,  Database, 
   Save, Key, CheckCircle, RefreshCw, 
-  Layers, School 
+   School 
 } from "lucide-react";
 
 const SettingsPage = () => {
@@ -10,7 +10,7 @@ const SettingsPage = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
 
-  const handleSave = async (e: React.FormEvent) => {
+  const handleSave = async (e: React.SubmitEvent) => {
     e.preventDefault();
     setIsSaving(true);
     // Simulate pipeline config update
@@ -27,7 +27,7 @@ const SettingsPage = () => {
   ];
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] w-full bg-gradient-to-br from-slate-50 via-emerald-50/40 to-teal-50/50 p-6 md:p-8 flex flex-col items-center justify-start">
+    <div className="min-h-[calc(100vh-4rem)] w-full bg-linear-to-br from-slate-50 via-emerald-50/40 to-teal-50/50 p-6 md:p-8 flex flex-col items-center justify-start">
       <div className="max-w-5xl w-full space-y-6">
         
         {/* 🗂️ Header Toolbar Row */}
@@ -54,7 +54,7 @@ const SettingsPage = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`w-full flex items-center gap-2.5 px-3 py-2 text-xs font-bold rounded-xl border transition-all text-left ${
                     isActive
-                      ? "bg-gradient-to-br from-emerald-600 to-teal-600 border-emerald-700 text-white shadow-sm"
+                      ? "bg-linear-to-br from-emerald-600 to-teal-600 border-emerald-700 text-white shadow-sm"
                       : "bg-transparent border-transparent text-slate-600 hover:bg-slate-50 hover:border-slate-300"
                   }`}
                 >

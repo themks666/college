@@ -2,7 +2,7 @@
 import { 
   Users, UserCheck, BookOpenCheck, TrendingUp, 
   ArrowUpRight, ArrowDownRight, MoreVertical, Plus, 
-  ArrowRight, Search
+  ArrowRight
 } from "lucide-react";
 
 export default function DashboardOverview({ onNavigateToRegister }: { onNavigateToRegister: () => void }) {
@@ -95,7 +95,7 @@ export default function DashboardOverview({ onNavigateToRegister }: { onNavigate
             {[45, 60, 35, 75, 90, 65, 85, 95, 50, 70, 110, 130].map((val, i) => (
               <div key={i} className="flex-1 flex flex-col items-center group cursor-pointer z-10">
                 <div 
-                  className="w-full bg-gradient-to-t from-emerald-500 to-teal-500 rounded-t-md group-hover:from-emerald-600 group-hover:to-teal-600 transition-all duration-300"
+                  className="w-full bg-linear-to-t from-emerald-500 to-teal-500 rounded-t-md group-hover:from-emerald-600 group-hover:to-teal-600 transition-all duration-300"
                   style={{ height: `${(val / 150) * 100}%` }}
                 />
                 <span className="text-[9px] text-slate-400 mt-2 scale-90 hidden sm:block">M{i+1}</span>

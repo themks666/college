@@ -63,7 +63,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] w-full bg-gradient-to-br from-slate-50 via-emerald-50/40 to-teal-50/50 p-6 md:p-8 flex flex-col justify-start items-center">
+    <div className="min-h-[calc(100vh-4rem)] w-full bg-linear-to-br from-slate-50 via-emerald-50/40 to-teal-50/50 p-6 md:p-8 flex flex-col justify-start items-center">
       <div className="max-w-3xl w-full space-y-6">
         
         {/* 🧭 Top Stepper Navigation (Sharper borders & left-side decorative indicator) */}
@@ -80,7 +80,7 @@ const Home = () => {
                     <div className="flex items-center gap-2">
                       <div className={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all duration-300 ${
                         isCurrent 
-                          ? "bg-gradient-to-br from-emerald-600 to-teal-600 border-emerald-700 text-white shadow-md shadow-emerald-600/20 scale-105" 
+                          ? "bg-linear-to-br from-emerald-600 to-teal-600 border-emerald-700 text-white shadow-md shadow-emerald-600/20 scale-105" 
                           : isPassed 
                           ? "bg-emerald-50 border-emerald-300 text-emerald-700 font-bold" 
                           : "bg-slate-50 border-slate-300 text-slate-500"
@@ -93,7 +93,7 @@ const Home = () => {
                     </div>
                     
                     {index < stepItems.length - 1 && (
-                      <div className={`h-[2px] grow mx-4 rounded transition-all duration-500 ${isPassed ? "bg-gradient-to-r from-emerald-500 to-teal-500" : "bg-slate-300"}`} />
+                      <div className={`h-0.5grow mx-4 rounded transition-all duration-500 ${isPassed ? "bg-linear-to-r from-emerald-500 to-teal-500" : "bg-slate-300"}`} />
                     )}
                   </div>
                 );
@@ -259,7 +259,7 @@ const Home = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <span className="text-xs font-bold text-slate-600 uppercase tracking-wider block flex items-center gap-1">
+                  <span className="text-xs font-bold text-slate-600 uppercase tracking-wider  flex items-center gap-1">
                     <MapPin className="w-3.5 h-3.5 text-slate-500" /> Physical Address Coordinates
                   </span>
                   <input type="text" {...register("address.street")} placeholder="Street Address Lane" className="w-full px-3.5 py-2 text-sm rounded-lg border-2 border-slate-300 bg-slate-50/30 focus:border-emerald-600" />
@@ -315,7 +315,7 @@ const Home = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-bold bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border border-emerald-700 rounded-xl shadow-md disabled:opacity-50 transition"
+                    className="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-bold bg-linear-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border border-emerald-700 rounded-xl shadow-md disabled:opacity-50 transition"
                   >
                     {isSubmitting ? "Processing..." : <>Complete Registration <Sparkles className="w-3.5 h-3.5" /></>}
                   </button>

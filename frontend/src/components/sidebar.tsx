@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { 
   LayoutDashboard, UserPlus, Users, BookOpen, 
@@ -57,7 +57,7 @@ export default function AdminSidebar() {
         <div>
           <div className="h-16 flex items-center justify-between px-4 border-b border-slate-100">
             <div className={`flex items-center gap-3 overflow-hidden whitespace-nowrap transition-opacity duration-200 ${isCollapsed ? "md:opacity-0" : "opacity-100"}`}>
-              <div className="bg-gradient-to-br from-emerald-600 to-teal-700 p-2 rounded-xl text-white shadow-md shadow-emerald-700/10">
+              <div className="bg-linear-to-br from-emerald-600 to-teal-700 p-2 rounded-xl text-white shadow-md shadow-emerald-700/10">
                 <ShieldAlert className="w-5 h-5" />
               </div>
               <span className="font-extrabold text-slate-950 tracking-tight text-base">EduCluster v4</span>

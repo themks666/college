@@ -76,7 +76,7 @@ const StudentDirectory = () => {
   const facultyOptions = ["All", ...Array.from(new Set(MOCK_STUDENTS.map(s => s.faculty)))];
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] w-full bg-gradient-to-br from-slate-50 via-emerald-50/40 to-teal-50/50 p-6 md:p-8 flex flex-col items-center justify-start">
+    <div className="min-h-[calc(100vh-4rem)] w-full bg-linear-to-br from-slate-50 via-emerald-50/40 to-teal-50/50 p-6 md:p-8 flex flex-col items-center justify-start">
       <div className="max-w-6xl w-full space-y-6">
         
         {/* 🗂️ Header Toolbar Row */}
@@ -144,7 +144,7 @@ const StudentDirectory = () => {
                       {/* Identity Details */}
                       <td className="py-4 px-5">
                         <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 border-2 border-slate-300 text-slate-700 font-extrabold flex items-center justify-center text-xs group-hover:border-emerald-500 transition-all">
+                          <div className="w-9 h-9 rounded-xl bg-linear-to-br from-slate-100 to-slate-200 border-2 border-slate-300 text-slate-700 font-extrabold flex items-center justify-center text-xs group-hover:border-emerald-500 transition-all">
                             {student.firstName[0]}{student.lastName[0]}
                           </div>
                           <div>
