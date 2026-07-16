@@ -34,7 +34,7 @@ const noticeSchema = new mongoose.Schema({
         required: true
     }
 }, {
-    timestamps: true // This adds createdAt and updatedAt automatically
+    timestamps: true 
 });
 
 export default mongoose.model('Notice', noticeSchema);

@@ -1,49 +1,13 @@
-import mongoose from "mongoose";
-const userSchema = new mongoose.Schema(
-  {
-    username: {
-      type: String,
-      unique: true,
-      required: [true, "you haven't provided any username"],
-      minLength: 3,
-    },
-    profilePic:{
-      type:String,
-    },
-    bio:{
-      type:String,
-    },
-    isVerified:{
-      type:Boolean,
-      default:false
-    },
-    email: {
-      type: String,
-      unique: true,
-      required: [true, "you haven't provided any email"],
-    },
-    password: {
-      type: String,
-      required: [true, "you haven't provided any password"],
-      minLength: 6,
-    },
-    avatar: {
-      type: String,
-    },
-    followers: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
-    following: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
-  },
-  { timestamps: true },
-);
+import { connect } from 'mongoose';
 
-export const UserModel = mongoose.model("User", userSchema);
+const connectDB = async() => {
+    try {
+        const conn = await connect(process.env.MONGO_URI);
+        console.log(`MongoDB Connected Successfully`);
+    } catch (error) {
+        console.error(`Error: ${error.message}`);
+        process.exit(1);
+    }
+};
+
+export default connectDB;
